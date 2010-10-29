@@ -1,0 +1,32 @@
+<% content_for :title do %>Register<% end %>
+
+<div class="error-messages">
+  <% @user.errors  %>
+</div>
+
+<div class="form round">
+  <div class="form-title round"> Register </div>
+  <%= form_for :user, @user, :url => users_url do |f| %>
+    <div class="field">
+      <div class="element-label"> <%= f.label :email, "Email" %></div>
+      <div class="element-field"> <%= f.text_field :email, :size =>38 %></div>
+      <small class="error-message"><%= error_messages(@user,:email ) %></small>
+    </div>
+
+    <div class="field">
+      <div class="element-label"> <%= f.label :password, "Password"  %> </div>
+      <div class="element-field"> <%= f.password_field :password, :size =>38 %> </div>
+      <small class="error-message"><%= error_messages(@user,:email ) %></small>
+    </div>
+
+    <div class="field">
+      <div class="element-label"> <%= f.label :password_confirmation, "Password Confirmation"  %> </div>
+      <div class="element-field"> <%= f.password_field :password, :size =>38 %> </div>
+      <small class="error-message"><%= error_messages(@user,:email ) %></small>
+    </div>
+
+    <div class="field">
+      <div> <%= f.submit "Register", :class => 'qa-buttons' %> </div>
+    </div>
+  <% end %>
+</div>

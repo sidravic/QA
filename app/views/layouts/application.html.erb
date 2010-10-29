@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>easyQA | <%= yield(:title) %></title>
+    <%= csrf_meta_tag %>
+    <%= yield(:css)  %>
+    <%= stylesheet_link_tag "application" %>
+    <%= javascript_include_tag :defaults %>
+    <%= csrf_meta_tag %>
+  </head>
+  <body>
+    <div class="container ">
+      <div class="header round">
+        <h2> easyQA </h2>
+        <div class="nav round">
+          <%= render "layouts/top_navigation" %>          
+        </div>
+      </div>
+      <div class="section round">
+        <%= render "layouts/flash_messages" %>
+        <%= yield %>
+      </div>
+
+      <div class="footer round">
+        <div class="nav round">
+          <%= render "layouts/footer_navigation" %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
