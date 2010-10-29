@@ -1,0 +1,131 @@
+.container {
+  width: 960px;
+  background: #FFFFFF;
+  margin: auto;
+  font-family: 'Myriad Web Pro', Helvetica, Arial, sans-serif;
+}
+
+
+.header {
+    padding-top:20px;
+    background-color: #333333;
+    height: 4em;
+    width: 100%;
+}
+
+.header h2{
+    float:left;
+    color: #CCCCCC;
+    padding:10px;
+    padding-left:20px;
+    padding-bottom:4px;
+    
+}
+
+.footer {
+    background : #333333;
+    color: #CCCCCC;
+    height: 4em;
+    width: 100%;
+    margin-top: 1em;
+}
+
+.nav{
+    float:right;
+    padding:20px;
+}
+
+.nav ul {
+    color: #CCCCCC;
+}
+.nav ul li {
+    list-style-type: none;
+    display:inline-block;
+    padding:0.2em;
+}
+
+.nav ul li a{
+    color: #CCCCCC;
+    text-decoration: none;
+    
+}
+
+.nav ul li a:hover{
+    color: #CCCCCC;
+    text-decoration: underline;
+}
+
+.round {
+  -moz-border-radius:    10px;
+  -webkit-border-radius: 10px;
+  border-radius:         10px;
+}
+
+.section{
+    margin-top: 1em;
+    padding:20px;
+    background:#CCCCCC;
+    
+}
+
+input[type="text"], input[type='password']{
+    height:30px;
+    border:2px solid #CCCCCC;
+    font-weight:bold;
+    font-size:12px;
+    
+}
+
+.form{
+    margin:auto;
+    margin-top:1em;
+    width: 35%;
+    padding:5px;
+    background:#E4E4E4;
+    border: 2px solid #CCCCCC;
+}
+
+
+.field{
+    padding:8px;
+    margin:auto;
+}
+
+.element-label{
+    padding: 2px;
+    padding-bottom:6px;
+    margin:auto;
+}
+
+.element-field{
+    padding:2px;
+    
+}
+
+.form-title{
+    background: #CCCCCC;
+    color: #333333;
+    font-weight: bold;
+    margin:auto;
+    text-align:center;
+    padding:4px;
+}
+
+
+
+.flash-messages{
+    background:#E4E4E4;
+    text-align:center;
+    width:760px;
+    margin:auto;
+    padding:5px;
+
+}
+
+.error{
+    border: 2px solid red;
+}
+
+.notice{
+    border: 2px solid green;
+}
