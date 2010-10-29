@@ -129,3 +129,7 @@ input[type="text"], input[type='password']{
 .notice{
     border: 2px solid green;
 }
+
+.error-message{
+    color:red;
+}
