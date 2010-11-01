@@ -1,4 +1,10 @@
 <ul>
-  <li> <%= link_to "Register", register_url %> </li> |
-  <li> <%= link_to "Sign in" %> </li>
+  <% if current_user %>
+    <li> <%= link_to "Dashboard",user_url(current_user) %> </li> |
+    <li> <%= link_to "Settings", edit_user_url(current_user) %> </li> |
+    <li> <%= link_to "Sign out", user_session_url, :confirm => "Are you sure", :method => :delete %> </li>
+  <% else %>
+    <li> <%= link_to "Register", register_url %> </li> |
+    <li> <%= link_to "Sign in", new_user_session_url %> </li>
+  <% end %>
 </ul>

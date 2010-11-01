@@ -7,6 +7,13 @@
 <div class="form round">
   <div class="form-title round"> Register </div>
   <%= form_for :user, @user, :url => users_url do |f| %>
+
+  <div class="field">
+      <div class="element-label"> <%= f.label :name, "Name" %></div>
+      <div class="element-field"> <%= f.text_field :name, :size =>38 %></div>
+      <small class="error-message"><%= error_messages(@user,:name ) %></small>
+    </div>
+
     <div class="field">
       <div class="element-label"> <%= f.label :email, "Email" %></div>
       <div class="element-field"> <%= f.text_field :email, :size =>38 %></div>
@@ -16,13 +23,13 @@
     <div class="field">
       <div class="element-label"> <%= f.label :password, "Password"  %> </div>
       <div class="element-field"> <%= f.password_field :password, :size =>38 %> </div>
-      <small class="error-message"><%= error_messages(@user,:email ) %></small>
+      <small class="error-message"><%= error_messages(@user,:password ) %></small>
     </div>
 
     <div class="field">
       <div class="element-label"> <%= f.label :password_confirmation, "Password Confirmation"  %> </div>
-      <div class="element-field"> <%= f.password_field :password, :size =>38 %> </div>
-      <small class="error-message"><%= error_messages(@user,:email ) %></small>
+      <div class="element-field"> <%= f.password_field :password_confirmation, :size =>38 %> </div>
+      <small class="error-message"><%= error_messages(@user,:password_confirmation ) %></small>
     </div>
 
     <div class="field">

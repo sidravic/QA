@@ -1,2 +1,39 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<% content_for :title do %>Edit Settings<% end %>
+
+
+<div class="large-form round">
+  <div class="form-title round"> Edit Profile </div>
+  <%= form_for @user, :as =>:user, :url => user_url(@user), :method => :put do |f| %>
+    <div class ="field">
+      <div class="element-label"> <%= f.label :name, "Name"%> </div>
+      <div class="element-field"> <%= f.text_field :name, :size => 38 %> </div>
+      <small class="error-message"><%= error_messages(@user,:name ) %></small>
+    </div>
+
+  <%= f.fields_for :profile, @user.profile do |profile|  %>
+    <div class ="field">
+      <div class="element-label"> <%= profile.label :description, "About"%> </div>
+      <div class="element-field"> <%= profile.text_area :description, :rows => 10, :cols => 38 %> </div>
+      <small class="error-message"><%= error_messages(@user.profile,:description ) %></small>
+    </div>
+
+    <div class ="field">
+      <div class="element-label"> <%= profile.label :url, "URL"%> </div>
+      <div class="element-field"> <%= profile.text_field :url %> </div>
+      <small class="error-message"><%= error_messages(@user.profile,:url ) %></small>
+    </div>
+  <% end %>
+
+    <div class ="field">
+      <div class="element-label"> Gravatar </div>
+      <div class="element-field"> <%= gravatar_for(@user) %> <br/>
+        <%= link_to "change","http://gravatar.com/emails" %>
+      </div>
+    </div>
+    
+    <div class="field">
+      <div class="element-field"><%= f.submit "Update Settings", :class => "qa-buttons" %>
+      </div>
+    <% end %>
+  </div>
+</div>

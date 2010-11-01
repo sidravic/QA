@@ -1,8 +1,13 @@
 Qa::Application.routes.draw do
   
+  #UserSession Routes
+  resource :user_session, :only => [:new, :create, :destroy]
 
+  # User Routes
   resources :users
   match "/register", :to => "users#new", :as => "register"
+
+  #Pages Routes
   match "pages/about", :to => "pages#about", :as => "about"
   match "pages/contact_us", :to => "pages#contact_us", :as => "contact_us"
   root :to => "pages#landing"

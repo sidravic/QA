@@ -28,6 +28,8 @@
     height: 4em;
     width: 100%;
     margin-top: 1em;
+    display: inline-block;
+    
 }
 
 .nav{
@@ -73,7 +75,16 @@ input[type="text"], input[type='password']{
     border:2px solid #CCCCCC;
     font-weight:bold;
     font-size:12px;
+    width:95%;
     
+}
+
+textarea{
+    border:2px solid #CCCCCC;
+    font-weight:bold;
+    font-size:12px;
+    width:95%;
+
 }
 
 .form{
@@ -98,8 +109,7 @@ input[type="text"], input[type='password']{
 }
 
 .element-field{
-    padding:2px;
-    
+    padding:2px;    
 }
 
 .form-title{
@@ -133,3 +143,68 @@ input[type="text"], input[type='password']{
 .error-message{
     color:red;
 }
+
+
+.right-section{
+    width:30%;
+    float:right;      
+}
+
+.left-section{
+    width:65%;
+    float:left;  
+    padding:20px;
+    background:#CCCCCC;
+  
+}
+
+.container-section{
+    width:100%;  
+    
+}
+
+.graybackground{
+    background: #CCCCCC;
+}
+
+.large-form{
+    margin:auto;
+    margin-top:1em;
+    width: 83%;
+    padding:5px;
+    background:#E4E4E4;
+    border: 2px solid #CCCCCC;
+}
+
+.profile{
+    padding:15px;
+
+}
+
+.gravatar{
+    padding-right:5px;
+    float: left;
+}
+
+.profile-top{
+    display:inline-block;
+}
+
+.title{
+    
+    display:block;
+    font-weight: bold;
+    font-size: 19px;
+    margin-left: 50px;
+
+}
+
+.profile-body{
+    margin-top: 10px;
+    display:inline-block;
+    width: 90%;
+    
+}
+
+
+
