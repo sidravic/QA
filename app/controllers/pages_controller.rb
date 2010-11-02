@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  layout 'inner'
+
   
   def about    
   end

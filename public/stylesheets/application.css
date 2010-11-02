@@ -129,6 +129,7 @@ textarea{
     width:760px;
     margin:auto;
     padding:5px;
+    margin-bottom: 1em;
 
 }
 
@@ -203,8 +204,72 @@ textarea{
     margin-top: 10px;
     display:inline-block;
     width: 90%;
+    font-size:smaller;
     
 }
 
+  .question{
+    width:95%;
+    background:#999;
+    padding:10px;
+  }
 
+  .question-author{
+    width:10%;
+    float:left;
+    padding-right:20px;
+    padding-bottom:10px;
+    display:block;
 
+  }
+
+  .question-details{
+    width: 85%;
+    display: inline-block;
+  }
+
+  .question-title{
+    font-weight:bold;
+    font-size:20px;
+
+  }
+
+  .smaller{
+    margin-top:4px;
+    padding-top:4px;
+    font-size:14px;
+  }
+
+  .question-description{
+    margin-top:1em;
+  }
+
+  .italics{
+    font-style: italic;
+  }
+
+  .light{
+    color:#E4E4E4;
+    font-size:14px;
+  }
+
+  .edit-links ul{
+    float:left;
+    padding-left:0px;
+    color: #E4E4E4;
+  }
+  .edit-links ul li{
+    list-style-type: none;
+    display:inline-block;
+
+  }
+
+  .edit-links ul li a{
+    text-decoration: none;
+    color: maroon;
+  }
+
+  .edit-links ul li a:hover{
+    text-decoration: underline;
+    color: maroon;
+  }

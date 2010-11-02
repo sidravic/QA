@@ -1,0 +1,2 @@
+class ChallengeQuestion < Question
+end

@@ -1,0 +1,47 @@
+class QuestionsController < ApplicationController
+  def new
+    @question = Question.new
+  end
+
+  def create    
+    @question = (params[:question][:type].downcase == 'simple') ? SimpleQuestion.new(params[:question]) : ChallengeQuestion.new(params[:question])
+    @question.user = current_user
+    if @question.save
+      flash[:notice] = "Question was successfully created and posted"
+      redirect_to user_question_url(current_user, @question)
+    else
+      flash.now[:error] = "Please fix the following errors"
+      render "new"
+    end
+  end
+
+  def show
+    @question = Question.find(params[:id])
+  end
+
+  def edit
+    @question = Question.find(params[:id])
+  end
+
+  def update    
+    @question = Question.find(params[:id])
+    if @question.update_attributes(params[:question])
+      flash[:notice] = "Your question has been successfully updated"
+      redirect_to user_question_url(current_user, @question)
+    else
+      flash.now[:error] = "Please fix the following errors"
+      render "edit"
+    end
+  end
+
+  def destroy
+    @question = Question.find(params[:id])
+    if @question.destroy
+      flash[:notice] = "Thread was successfully deleted"
+      redirect_to user_url(current_user)
+    else
+      flash[:error] = "This thread could not be deleted"
+      redirect_to user_questions_url(current_user, @question)
+    end
+  end
+end

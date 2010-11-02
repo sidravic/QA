@@ -1,14 +1,14 @@
 <% content_for :right do %>
-<div class="profile round graybackground">
-  <div class="profile-top">
-    <div class="gravatar"> <%= gravatar_for @user, {:s => 50 } %> </div>
-    <div class="title"> <%= @user.name %> </div>
+  <div class="profile round graybackground">
+    <div class="profile-top">
+      <div class="gravatar"> <%= gravatar_for @user, {:s => 50 } %> </div>
+      <div class="title"> <%= @user.name %> </div>
+    </div>
+    <div class="profile-body">
+      <div class="about"> <%= @user.profile.description %> </div>
+    </div>
   </div>
-  <div class="profile-body">
-    <div class="about"> <%= @user.profile.description %> </div>
-  </div>
-</div>
-  
 <% end %>
+
 <h1>Users#show</h1>
 <p>Find me in app/views/users/show.html.erb</p>

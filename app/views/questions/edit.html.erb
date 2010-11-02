@@ -1,0 +1,28 @@
+<% content_for :title do %>Edit - Ask a Question<% end %>
+
+<div class="large-form round">
+  <div class="form-title round"> New Question </div>
+  <%= form_for @question, :as => :question, :url => user_question_url(current_user, @question), :method => :put do |f| %>
+
+  <div class="field">
+      <div class="element-label"> Type </div>
+      <div class="element-field italics"> <%=  @question.type.to_s.humanize %>  </div>
+  </div>
+
+  <div class="field">
+      <div class="element-label"> <%= f.label :title, "Title" %></div>
+      <div class="element-field"> <%= f.text_field :title, :size =>38 %></div>
+      <small class="error-message"><%= error_messages(@question,:title ) %></small>
+    </div>
+
+    <div class="field">
+      <div class="element-label"> <%= f.label :description, "Description" %></div>
+      <div class="element-field"> <%= f.text_area :description %></div>
+      <small class="error-message"><%= error_messages(@question,:description ) %></small>
+    </div>
+
+    <div class="field">
+      <div> <%= f.submit "Register", :class => 'qa-buttons' %> </div>
+    </div>
+  <% end %>
+</div>
