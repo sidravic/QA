@@ -9,3 +9,15 @@ Factory.define :profile do |profile|
   profile.descripton "Ruby on Rails developer"
   profile.url "http://errorwatch.wordpress.com"
 end
+
+Factory.define :answer do |answer|
+  answer.content "This is the house that jack built"
+  answer.association :question
+end
+
+Factory.define :question do |question|
+  question.title "What is the capital of China"
+  question.description "What is the capital of the Asian Country called China"
+  question.association :user
+
+end

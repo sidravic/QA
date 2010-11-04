@@ -1,0 +1,12 @@
+<%= render "questions/question_block", :question => @answer.question %>
+
+<div class="new-answers">
+  <%= form_for @answer, :as => :answer, :url => question_answer_url(@answer.question, @answer), :method => :put do |f| %>
+
+    <%= render :partial => "answers/answer_form_fields", :locals => {:f => f, :answer => @answer} %>
+
+    <div class="field">
+      <div> <%= f.submit "Update", :class => 'qa-buttons' %> </div>
+    </div>
+  <% end %>
+</div>

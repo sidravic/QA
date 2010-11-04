@@ -96,14 +96,30 @@ describe QuestionsController do
         :type => "simple"
       }
 
+      controller.stub!(:current_user).and_return(@user)
       @question = Question.create!(@valid_question_attributes)
+      @answer = Answer.create!(:content => "The answer is china" )
+    end
+
+    describe "succesful deletion" do
+      it "should delete a question if it has no answers" do
+        count = Question.count
+        delete :destroy, :user_id => @user.id, :id => @question.id
+        Question.count.should eql(count - 1)
+      end
     end
     
-    it "should delete a question if it has no answers" do
-      count = Question.count
-      delete :destroy, :user_id => @user.id, :id => @question.id
-      Question.count.should eql(count - 1)
-    end
-    
+    describe "delete failure" do      
+        before(:each) do
+          @question.answers << @answer
+          @question.save(:validate => false)
+        end
+
+      it "should not delete a question if it has answers" do
+        count = Question.count
+        delete :destroy, :user_id => @user.id, :id => @question.id
+        Question.count.should eql(count)
+      end
+    end    
   end
 end

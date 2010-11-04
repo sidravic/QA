@@ -17,6 +17,7 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
+    @answer = Answer.new
   end
 
   def edit
@@ -36,12 +37,17 @@ class QuestionsController < ApplicationController
 
   def destroy
     @question = Question.find(params[:id])
-    if @question.destroy
-      flash[:notice] = "Thread was successfully deleted"
-      redirect_to user_url(current_user)
+    if @question.answers.empty?
+      if @question.destroy
+        flash[:notice] = "Thread was successfully deleted"
+        redirect_to user_url(current_user)
+      else
+        flash[:error] = "This thread could not be deleted"
+        redirect_to user_question_url(current_user, @question)
+      end
     else
       flash[:error] = "This thread could not be deleted"
-      redirect_to user_questions_url(current_user, @question)
+      redirect_to user_question_url(current_user, @question)
     end
   end
 end

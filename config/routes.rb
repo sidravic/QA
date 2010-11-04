@@ -1,13 +1,19 @@
 Qa::Application.routes.draw do
   
- 
-
   #UserSession Routes
   resource :user_session, :only => [:new, :create, :destroy]
 
   # User Routes
   resources :users do
     resources :questions
+    
+    collection do
+      get "my_qa"
+    end
+  end
+
+  resources :questions do
+    resources :answers, :except => [:show, :new]
   end
 
   match "/register", :to => "users#new", :as => "register"

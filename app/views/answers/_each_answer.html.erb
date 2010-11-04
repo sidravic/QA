@@ -1,0 +1,26 @@
+<div class="each-answer round">
+      <div class="answer-author">
+        <%= gravatar_for(answer.user)%>
+      </div>
+
+      <div class="answer-details">
+        <div class="smaller"> <%= answer.user.name %> </div>
+        <span class="italics dark">
+          <%= answer.created_at.to_datetime.strftime("%b %M %Y, %H:%M") %>
+        </span>
+
+
+        <div class="answer-description">
+          <%= answer.content %>
+          <% if current_user == answer.user %>
+            <div class="edit-links">
+              <ul>
+                <li> <%= link_to "Edit", edit_question_answer_url(question, answer) %> |</li>
+                <li> <%= link_to "Delete", question_answer_url(question, answer), :method => :delete, :confirm => "Are you sure you want to delete this answer?" %> </li>
+              </ul>
+            </div>
+          <% end  %>
+        </div>
+
+      </div>
+    </div>

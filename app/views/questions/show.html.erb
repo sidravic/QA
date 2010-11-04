@@ -1,112 +1,24 @@
+<%= render "questions/question_block", :question => @question %>
 
-<div class="question round">
-  <div class="question-author">
-    <%= gravatar_for(@question.user, :s => 60) %>
-  </div>
-
-
-  <div class="question-details">
-    <div class="question-title">
-      <%= @question.title %> <br/>
-      <div class="smaller"> <%= @question.user.name %> &nbsp;
-        <span class="italics light">
-          <%= @question.created_at.to_datetime.strftime("%b %M %Y, %H:%M") %>
-        </span>
-      </div>
-
-    </div>
-
-    <div class="question-description">
-      <%= @question.description %>
-
-      <% if current_user == @question.user %>
-        <div class="edit-links">
-          <ul>
-            <li> <%= link_to "Edit", edit_user_question_url(current_user, @question) %> |</li>
-            <li> <%= link_to "Delete", user_question_url(current_user, @question), :method => :delete, :confirm => "Are you sure you want to delete this thread?" %> </li>
-          </ul>
-        </div>
-      <% end %>
-
-    </div>
-
-
-  </div>
-
+<div class = "answers">
+  <h4> Answers </h4>
+  <% @question.answers.each do |answer| %>
+    <%= render :partial => "answers/each_answer", :locals => {:answer => answer,
+                                                    :question => @question} %>
+  <% end %>
 </div>
 
-<div class="answers">
-  <div class="each-answer">    
+<% if current_user %>
+  <div class="new-answers">
+    <h4> Submit an Answer </h4>
+    <div class="answer-form round">
+      <%= render "answers/answer_form", :question => @question %>
+    </div>
   </div>
-</div>
+<% end %>
 
 
 
-<style>
-  .question{
-    width:95%;
-    background:#999;
-    padding:10px;
-  }
 
-  .question-author{
-    width:10%;
-    float:left;
-    padding-right:20px;
-    padding-bottom:10px;
-    display:block;
 
-  }
 
-  .question-details{
-    width: 85%;
-    display: inline-block;
-  }
-
-  .question-title{
-    font-weight:bold;
-    font-size:20px;
-
-  }
-
-  .smaller{
-    margin-top:4px;
-    padding-top:4px;
-    font-size:14px;
-  }
-
-  .question-description{
-    margin-top:1em;
-  }
-
-  .italics{
-    font-style: italic;
-  }
-
-  .light{
-    color:#E4E4E4;
-    font-size:14px;
-  }
-
-  .edit-links ul{
-    float:left;
-    padding-left:0px;
-    color: #E4E4E4;
-  }
-  .edit-links ul li{
-    list-style-type: none;
-    display:inline-block;
-
-  }
-
-  .edit-links ul li a{
-    text-decoration: none;
-    color: maroon;
-  }
-
-  .edit-links ul li a:hover{
-    text-decoration: underline;
-    color: maroon;
-  }
-
-</style>

@@ -1,0 +1,39 @@
+
+<div class="my-questions">
+  <h3> My Questions</h3>
+  <div class="questions-pagination">
+    <%= will_paginate @my_questions, {:next_label => "Next >>", :previous_label => "<< Previous"} %>
+  </div>
+
+  <% unless @my_questions.empty? %>
+    <% @my_questions.each do | question | %>
+      <%= render :partial => "questions/each_question", :locals => {:question => question} %>
+    <% end %>
+  <% else %>
+    You have not posted any questions yet. <%= link_to "Post one now", new_user_question_url(current_user) %>
+  <% end %>
+
+  <div class="questions-pagination">
+    <%= will_paginate @my_questions, {:next_label => "Next >>", :previous_label => "<< Previous"} %>
+  </div>
+</div>
+
+<div class="my-answers">
+  <div class="questions-pagination">
+    <%= will_paginate @my_answers, {:next_label => "Next >>", :previous_label => "<< Previous"} %>
+  </div>
+
+  <h3> Answers </h3>
+  <% unless @my_answers.empty? %>
+    <% @my_answers.each do | answer | %>
+      <%= render :partial => "questions/each_question", :locals => {:question => answer.question} %>
+    <% end %>
+  <% else %>
+    You have not posted any questions yet. <%= link_to "Try answering one now", user_url(current_user) %>
+  <% end  %>
+
+  <div class="questions-pagination">
+    <%= will_paginate @my_answers, {:next_label => "Next >>", :previous_label => "<< Previous"} %>
+  </div>
+
+</div>

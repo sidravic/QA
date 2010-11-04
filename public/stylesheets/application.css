@@ -273,3 +273,178 @@ textarea{
     text-decoration: underline;
     color: maroon;
   }
+
+    .question{
+    width:95%;
+    background:#999;
+    padding:10px;
+  }
+
+  .question-author{
+    width:10%;
+    float:left;
+    padding-right:20px;
+    padding-bottom:10px;
+    display:block;
+
+  }
+
+  .question-details{
+    width: 85%;
+    display: inline-block;
+  }
+
+  .question-title{
+    font-weight:bold;
+    font-size:20px;
+
+  }
+
+  .smaller{
+    margin-top:4px;
+    padding-top:4px;
+    font-size:14px;
+  }
+
+  .question-description{
+    margin-top:1em;
+  }
+
+  .italics{
+    font-style: italic;
+  }
+
+  .light{
+    color:#E4E4E4;
+    font-size:14px;
+  }
+
+  .edit-links ul{
+    float:left;
+    padding-left:0px;
+    color: darkgray;
+  }
+  .edit-links ul li{
+    list-style-type: none;
+    display:inline-block;
+
+  }
+
+  .edit-links ul li a{
+    text-decoration: none;
+    color: maroon;
+    font-size:13px;
+  }
+
+  .edit-links ul li a:hover{
+    text-decoration: underline;
+    color: maroon;
+    font-size:13px;
+  }
+
+
+
+  .answer-form textarea{
+    margin-top: 1em;
+    width:98%;
+    font-size: 14px;
+  }
+
+  .new-answers{
+    margin-top: 2em;
+  }
+
+  .answer-author{
+    width:10%;
+    float:left;
+    padding-right:20px;
+    padding-bottom:10px;
+    display:block;
+
+  }
+
+  .answer-details{
+    width: 85%;
+    display: inline-block;
+    font-weight:bold;
+  }
+
+  .answer-description{
+    margin-top:1em;
+    font-weight:normal;
+  }
+
+  .each-answer{
+    width:95%;
+    background:#E4E4E4;
+    padding:10px;
+    margin-top:1em;
+  }
+
+  .answers{
+    margin-top: 2em;
+  }
+
+  .dark{
+    color:#444;
+    font-size:14px;
+  }
+
+
+  .primary-navigation{
+    padding: 3px;
+    width: 95%;
+    margin:auto;
+  }
+
+
+
+  .primary-navigation .primary-navigation-links a{
+    padding-right:5px;
+    text-decoration:none;
+    color:maroon;
+  }
+
+  .primary-navigation .primary-navigation-links a:hover{
+    text-decoration: underline;
+    color:maroon;
+    margin-left:0px;
+
+  }
+
+  .each-questions{
+    margin-top:1em;
+    padding: 5px;
+    background:#E4E4E4;
+  }
+
+  .question-title{
+    font-size: 16px;
+    padding:5px;
+    margin-left:1em;
+
+  }
+
+  .question-title a{
+    text-decoration: none;
+  }
+
+  .question-publish-details{
+    margin-left: 1.5em;
+  }
+
+
+  .latest-questions{
+    margin-top:2em;
+}
+
+.questions-pagination{
+  margin-top:2em;
+  padding:3px;
+}
+
+.pagination a{
+  padding:3px;
+  text-decoration: none;
+  color:maroon;
+}

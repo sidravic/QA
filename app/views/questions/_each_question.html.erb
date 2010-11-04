@@ -1,0 +1,12 @@
+<div class="each-questions round">
+  <div class="question-title"> <%= link_to "#{question.title}", question_url(question) %> </div>
+  <div class="question-publish-details italics dark">
+    <% unless question.answers.empty? %>
+      <%=" #{pluralize(question.answers.size, "reply", "replies")}, lastest by " + question.answers.last.user.name %>
+    <% else %>
+      <%= "asked by " + question.user.name  %>
+    <% end %>
+    <span class="posted-at" style="float:right; margin-right:10px;"> Posted on <%= question.created_at.to_datetime.strftime("%b %d %Y, %H:%M") %> </span>
+  </div>
+</div>
+

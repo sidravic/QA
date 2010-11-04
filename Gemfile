@@ -14,7 +14,7 @@ gem 'fastthread'
 gem 'gravatar_image_tag', '0.1.0'
 gem "authlogic"
 gem "rails3-generators"
-
+gem 'will_paginate', '3.0.pre2'
 
 
 group :development do

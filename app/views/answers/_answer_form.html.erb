@@ -1,0 +1,20 @@
+
+<div class="round">  
+  <%= form_for @answer, :as => :answer, :url => question_answers_url(@question) do |f| %>
+
+    <%= render :partial => "answers/answer_form_fields", :locals => {:f => f, :answer => @answer}  %>
+
+    <div class="field">
+      <div> <%= f.submit "Save", :class => 'qa-buttons' %> </div>
+    </div>
+  <% end %>
+</div>
+
+<style>
+  .answer-form{
+    background: #999999;
+    padding: 10px;
+    width:95%;
+    margin-top: 1em;
+  }
+</style>

@@ -5,8 +5,10 @@ class Question < ActiveRecord::Base
   validates :title, :presence => true
   validates :description, :presence => true  
 
-  belongs_to :user 
-  
-  scope :simple_questions, :conditions => ["questions.type = 'SimpleQuestion'"]
-  scope :challenge_questions, :conditions => ["questions.type = 'ChallengeQuestion'"]
+  belongs_to :user
+  has_many :answers, :dependent => :destroy
+
+  default_scope order('created_at DESC')
+  scope :simple_questions, where(["questions.type = 'SimpleQuestion'"])
+  scope :challenge_questions, where(["questions.type = 'ChallengeQuestion'"])
 end

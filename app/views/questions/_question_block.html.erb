@@ -1,0 +1,30 @@
+
+<div class="question round">
+  <div class="question-author">
+    <%= gravatar_for(question.user, :s => 60) %>
+  </div>
+
+  <div class="question-details">
+    <div class="question-title">
+      <%= question.title %> <br/>
+      <div class="smaller"> <%= question.user.name %> &nbsp;
+        <span class="italics light">
+          <%= question.created_at.to_datetime.strftime("%b %d %Y, %H:%M") %>
+        </span>
+      </div>
+    </div>
+
+    <div class="question-description">
+      <%= question.description %>
+      <% if current_user == question.user %>
+        <div class="edit-links">
+          <ul>
+            <li> <%= link_to "Edit", edit_user_question_url(current_user, question) %> |</li>
+            <li> <%= link_to "Delete", user_question_url(current_user, question), :method => :delete, :confirm => "Are you sure you want to delete this thread?" %> </li>
+          </ul>
+        </div>
+      <% end %>
+    </div>
+
+  </div>
+</div>

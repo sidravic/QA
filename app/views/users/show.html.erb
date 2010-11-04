@@ -10,5 +10,22 @@
   </div>
 <% end %>
 
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+
+<div class="primary-navigation">
+  <span class = "primary-navigation-links" style ="float:left;">
+    <%= link_to_unless_current "Latest Questions", user_url(current_user) %>  |
+    <%= link_to_unless_current "My Q&A", my_qa_users_url %> |
+    <%= link_to_unless_current "Stats", "#" %>
+  </span>
+</div>
+
+<div class="latest-questions">
+  <% @questions.each do | question | %>     
+    <%= render :partial => "questions/each_question", :locals => {:question => question} %>
+  <% end %> 
+</div>
+
+<div class="questions-pagination">
+  <%= will_paginate @questions, {:next_label => "Next >>", :previous_label => "<< Previous"} %>
+</div>
+
