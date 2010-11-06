@@ -1,8 +1,8 @@
 .container {
-  width: 960px;
-  background: #FFFFFF;
-  margin: auto;
-  font-family: 'Myriad Web Pro', Helvetica, Arial, sans-serif;
+    width: 960px;
+    background: #FFFFFF;
+    margin: auto;
+    font-family: 'Myriad Web Pro', Helvetica, Arial, sans-serif;
 }
 
 
@@ -19,7 +19,7 @@
     padding:10px;
     padding-left:20px;
     padding-bottom:4px;
-    
+
 }
 
 .footer {
@@ -29,7 +29,7 @@
     width: 100%;
     margin-top: 1em;
     display: inline-block;
-    
+
 }
 
 .nav{
@@ -49,7 +49,7 @@
 .nav ul li a{
     color: #CCCCCC;
     text-decoration: none;
-    
+
 }
 
 .nav ul li a:hover{
@@ -58,16 +58,16 @@
 }
 
 .round {
-  -moz-border-radius:    10px;
-  -webkit-border-radius: 10px;
-  border-radius:         10px;
+    -moz-border-radius:    10px;
+    -webkit-border-radius: 10px;
+    border-radius:         10px;
 }
 
 .section{
     margin-top: 1em;
     padding:20px;
     background:#CCCCCC;
-    
+
 }
 
 input[type="text"], input[type='password']{
@@ -76,7 +76,7 @@ input[type="text"], input[type='password']{
     font-weight:bold;
     font-size:12px;
     width:95%;
-    
+
 }
 
 textarea{
@@ -156,16 +156,16 @@ textarea{
     float:left;  
     padding:20px;
     background:#CCCCCC;
-  
+
 }
 
 .container-section{
     width:100%;  
-    
+
 }
 
 .graybackground{
-    background: #CCCCCC;
+
 }
 
 .large-form{
@@ -179,6 +179,7 @@ textarea{
 
 .profile{
     padding:15px;
+    background:none repeat scroll 0 0 #CCCCCC
 
 }
 
@@ -192,7 +193,7 @@ textarea{
 }
 
 .title{
-    
+
     display:block;
     font-weight: bold;
     font-size: 19px;
@@ -205,246 +206,257 @@ textarea{
     display:inline-block;
     width: 90%;
     font-size:smaller;
-    
+
 }
 
-  .question{
+.question{
     width:95%;
     background:#999;
     padding:10px;
-  }
+}
 
-  .question-author{
+.question-author{
     width:10%;
     float:left;
     padding-right:20px;
     padding-bottom:10px;
     display:block;
 
-  }
+}
 
-  .question-details{
+.question-details{
     width: 85%;
     display: inline-block;
-  }
+}
 
-  .question-title{
+.question-title{
     font-weight:bold;
     font-size:20px;
 
-  }
+}
 
-  .smaller{
+.smaller{
     margin-top:4px;
     padding-top:4px;
     font-size:14px;
-  }
+}
 
-  .question-description{
+.question-description{
     margin-top:1em;
-  }
+}
 
-  .italics{
+.italics{
     font-style: italic;
-  }
+}
 
-  .light{
+.light{
     color:#E4E4E4;
     font-size:14px;
-  }
+}
 
-  .edit-links ul{
+.edit-links ul{
     float:left;
     padding-left:0px;
     color: #E4E4E4;
-  }
-  .edit-links ul li{
+}
+.edit-links ul li{
     list-style-type: none;
     display:inline-block;
 
-  }
+}
 
-  .edit-links ul li a{
+.edit-links ul li a{
     text-decoration: none;
     color: maroon;
-  }
+}
 
-  .edit-links ul li a:hover{
+.edit-links ul li a:hover{
     text-decoration: underline;
     color: maroon;
-  }
+}
 
-    .question{
+.question{
     width:95%;
     background:#999;
     padding:10px;
-  }
+}
 
-  .question-author{
+.question-author{
     width:10%;
     float:left;
     padding-right:20px;
     padding-bottom:10px;
     display:block;
 
-  }
+}
 
-  .question-details{
+.question-details{
     width: 85%;
     display: inline-block;
-  }
+}
 
-  .question-title{
+.question-title{
     font-weight:bold;
     font-size:20px;
 
-  }
+}
 
-  .smaller{
+.smaller{
     margin-top:4px;
     padding-top:4px;
     font-size:14px;
-  }
+}
 
-  .question-description{
+.question-description{
     margin-top:1em;
-  }
+}
 
-  .italics{
+.italics{
     font-style: italic;
-  }
+}
 
-  .light{
+.light{
     color:#E4E4E4;
     font-size:14px;
-  }
+}
 
-  .edit-links ul{
+.edit-links ul{
     float:left;
     padding-left:0px;
     color: darkgray;
-  }
-  .edit-links ul li{
+}
+.edit-links ul li{
     list-style-type: none;
     display:inline-block;
 
-  }
+}
 
-  .edit-links ul li a{
+.edit-links ul li a{
     text-decoration: none;
     color: maroon;
     font-size:13px;
-  }
+}
 
-  .edit-links ul li a:hover{
+.edit-links ul li a:hover{
     text-decoration: underline;
     color: maroon;
     font-size:13px;
-  }
+}
 
 
 
-  .answer-form textarea{
+.answer-form textarea{
     margin-top: 1em;
     width:98%;
     font-size: 14px;
-  }
+}
 
-  .new-answers{
+.new-answers{
     margin-top: 2em;
-  }
+}
 
-  .answer-author{
+.answer-author{
     width:10%;
     float:left;
     padding-right:20px;
     padding-bottom:10px;
     display:block;
 
-  }
+}
 
-  .answer-details{
+.answer-details{
     width: 85%;
     display: inline-block;
     font-weight:bold;
-  }
+}
 
-  .answer-description{
+.answer-description{
     margin-top:1em;
     font-weight:normal;
-  }
+}
 
-  .each-answer{
+.each-answer{
     width:95%;
     background:#E4E4E4;
     padding:10px;
     margin-top:1em;
-  }
+}
 
-  .answers{
+.answers{
     margin-top: 2em;
-  }
+}
 
-  .dark{
+.dark{
     color:#444;
     font-size:14px;
-  }
+}
 
 
-  .primary-navigation{
+.primary-navigation{
     padding: 3px;
     width: 95%;
     margin:auto;
-  }
+}
 
 
 
-  .primary-navigation .primary-navigation-links a{
+.primary-navigation .primary-navigation-links a{
     padding-right:5px;
     text-decoration:none;
     color:maroon;
-  }
+}
 
-  .primary-navigation .primary-navigation-links a:hover{
+.primary-navigation .primary-navigation-links a:hover{
     text-decoration: underline;
     color:maroon;
     margin-left:0px;
 
-  }
+}
 
-  .each-questions{
+.primary-navigation .primary-navigation-links-right a{
+    text-decoration:none;
+    color:maroon;
+}
+
+.primary-navigation .primary-navigation-links-right a:hover{
+    text-decoration:underline;
+    color:maroon;
+}
+
+.each-questions{
     margin-top:1em;
     padding: 5px;
     background:#E4E4E4;
-  }
+}
 
-  .question-title{
+.question-title{
     font-size: 16px;
     padding:5px;
     margin-left:1em;
 
-  }
+}
 
-  .question-title a{
+.question-title a{
     text-decoration: none;
-  }
+}
 
-  .question-publish-details{
+.question-publish-details{
     margin-left: 1.5em;
-  }
+}
 
 
-  .latest-questions{
+.latest-questions{
     margin-top:2em;
 }
 
 .questions-pagination{
-  margin-top:2em;
-  padding:3px;
+    margin-top:2em;
+    padding:3px;
+    font-size:12px
 }
 
 .pagination a{
-  padding:3px;
-  text-decoration: none;
-  color:maroon;
+    padding:3px;
+    text-decoration: none;
+    color:maroon;
 }

@@ -1,5 +1,5 @@
 <% content_for :right do %>
-  <div class="profile round graybackground">
+  <div class="profile graybackground">
     <div class="profile-top">
       <div class="gravatar"> <%= gravatar_for @user, {:s => 50 } %> </div>
       <div class="title"> <%= @user.name %> </div>
@@ -16,6 +16,9 @@
     <%= link_to_unless_current "Latest Questions", user_url(current_user) %>  |
     <%= link_to_unless_current "My Q&A", my_qa_users_url %> |
     <%= link_to_unless_current "Stats", "#" %>
+  </span>
+  <span class="primary-navigation-links-right" style="float:right">
+    <%= link_to_unless_current "New Question", new_user_question_url(current_user) %>  
   </span>
 </div>
 

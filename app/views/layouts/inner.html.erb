@@ -10,9 +10,9 @@
   </head>
   <body>
     <div class="container ">
-      <div class="header round">
+      <div class="header">
         <h2> easyQA </h2>
-        <div class="nav round">
+        <div class="nav">
           <%= render "layouts/top_navigation" %>
         </div>
       </div>
@@ -20,17 +20,17 @@
       <%= render "layouts/flash_messages" %>
 
       <div class="container-section">
-        <div class="left-section round">
+        <div class="left-section">
           <%= yield %>
         </div>
 
-        <div class="right-section round">          
+        <div class="right-section">          
           <%= yield(:right) %>
         </div>
       </div>
       
-      <div class="footer round">
-        <div class="nav round">
+      <div class="footer">
+        <div class="nav">
           <%= render "layouts/footer_navigation" %>
         </div>
       </div>

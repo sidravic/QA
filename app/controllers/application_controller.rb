@@ -1,8 +1,11 @@
+require 'constants'
 class ApplicationController < ActionController::Base
+  
   protect_from_forgery
   helper_method :current_user_session
   helper_method :current_user
 
+  include Constants
   
   def current_user_session
     return @current_user_session if defined?(@current_user_session)

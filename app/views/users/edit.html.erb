@@ -1,8 +1,8 @@
 <% content_for :title do %>Edit Settings<% end %>
 
 
-<div class="large-form round">
-  <div class="form-title round"> Edit Profile </div>
+<div class="large-form">
+  <div class="form-title "> Edit Profile </div>
   <%= form_for @user, :as =>:user, :url => user_url(@user), :method => :put do |f| %>
     <div class ="field">
       <div class="element-label"> <%= f.label :name, "Name"%> </div>

@@ -7,16 +7,25 @@
   <div class="form-title round"> New Question </div>
   <%= form_for @question, :as => :question, :url => user_questions_url(current_user) do |f| %>
 
-  <div class="field">
+    <div class="field">
       <div class="element-label"> Type </div>
       <div class="element-field"> <%= f.select( "type",{"SimpleQuestion" => 'simple', 'Challenge' => 'challenge'}) %>  </div>
-  </div>
+    </div>
 
-  <div class="field">
-      <div class="element-label"> <%= f.label :title, "Tile" %></div>
+    <div class="field">
+      <div class="element-label"> <%= f.label :title, "Title" %></div>
       <div class="element-field"> <%= f.text_field :title, :size =>38 %></div>
       <small class="error-message"><%= error_messages(@question,:title ) %></small>
     </div>
+
+    <%= fields_for :category, @category do |category|  %>    
+      <div class="field">
+        <div class="element-label"> <%= category.label :title, "Categories" %></div>
+        <div class="element-field"> <%= category.text_field :title, :size =>38 %></div>
+        <small class="error-message"> <%= error_messages(@question, :categories)%></small>
+
+      </div>
+    <% end %>
 
     <div class="field">
       <div class="element-label"> <%= f.label :description, "Description" %></div>

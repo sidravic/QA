@@ -12,7 +12,7 @@ describe QuestionsController do
       get 'new', :user_id => @user.id
       response.should be_success
     end
-
+ 
     it "should have the right title" do
       get :new, :user_id => @user.id
       response.should have_selector("title", :content => "Ask Question")
@@ -24,17 +24,18 @@ describe QuestionsController do
       @valid_question_attributes = {
         :title => "What is the capital of China #Geography",
         :description => "What is the capital of the Asian country China",
-        :type => "simple"
+        :type => "simple",        
       }
 
+      @valid_category_attributes =  {:title => "SometTitle" } 
       
     end
 
     describe "valid question" do
-      it "should create a new question" do
+      it "should create a new question" do        
         controller.stub!(:current_user).and_return(@user)
         count = Question.count
-        post :create, :user_id => @user.id, :question => @valid_question_attributes
+        post :create, :user_id => @user.id, :question => @valid_question_attributes, :category => @valid_category_attributes
         Question.count.should eql(count + 1)
       end
     end
@@ -43,7 +44,7 @@ describe QuestionsController do
       it "should prevent the user from posting a new question" do
         controller.stub!(:current_user).and_return(@user)
         count = Question.count
-        post :create, :user_id => @user.id, :question => @valid_question_attributes.merge({:title => nil, :description => nil})
+        post :create, :user_id => @user.id, :question => @valid_question_attributes.merge({:title => nil, :description => nil}), :category => @valid_category_attributes.merge({:title => ""})
         Question.count.should eql(count)
         response.should render_template("new")
       end 

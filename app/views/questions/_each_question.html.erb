@@ -1,6 +1,10 @@
-<div class="each-questions round">
+<div class="each-questions">
   <div class="question-title"> <%= link_to "#{question.title}", question_url(question) %> </div>
   <div class="question-publish-details italics dark">
+    <div class="category-list">
+      Categorized In: <%= render :partial => "questions/hash_tag_categories", :locals => {:question => question } %>
+    </div>
+    <br/>
     <% unless question.answers.empty? %>
       <%=" #{pluralize(question.answers.size, "reply", "replies")}, lastest by " + question.answers.last.user.name %>
     <% else %>
@@ -10,3 +14,16 @@
   </div>
 </div>
 
+
+<style>
+  .category-list{
+    margin-top:1em;
+    font-size: 12px;
+}
+
+.category-list a{
+  text-decoration: none;
+  color:maroon;
+}
+
+</style>
