@@ -1,5 +1,6 @@
 Qa::Application.routes.draw do
-  
+
+
  resources :categories, :only => [:index] do
    member do
      get 'question'
@@ -20,7 +21,10 @@ Qa::Application.routes.draw do
   end
 
   resources :questions do
-    resources :answers, :except => [:show, :new]
+    resources :answers, :except => [:show, :new] do
+      resources :comments, :except => [:show, :new, :edit, :index]
+    end
+    resource :comments, :except => [:show, :new, :edit, :index]
   end
 
   match "/register", :to => "users#new", :as => "register"

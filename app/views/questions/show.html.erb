@@ -1,3 +1,4 @@
+<% content_for :title do %> <%= @question.title %> <% end %>
 <%= render "questions/question_block", :question => @question %>
 
 <div class = "answers">
@@ -11,7 +12,7 @@
 <% if current_user %>
   <div class="new-answers">
     <h4> Submit an Answer </h4>
-    <div class="answer-form round">
+    <div class="answer-form">
       <%= render "answers/answer_form", :question => @question %>
     </div>
   </div>

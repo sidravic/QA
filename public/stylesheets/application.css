@@ -5,6 +5,13 @@
     font-family: 'Myriad Web Pro', Helvetica, Arial, sans-serif;
 }
 
+a{
+    color:#336699;
+}
+
+a:hover{
+    color:#336699;
+}
 
 .header {
     padding-top:20px;
@@ -66,13 +73,15 @@
 .section{
     margin-top: 1em;
     padding:20px;
-    background:#CCCCCC;
+    /*background:#CCCCCC;*/
+    color:#336699;
+    border: 1px solid #DEE7EC;
 
 }
 
 input[type="text"], input[type='password']{
     height:30px;
-    border:2px solid #CCCCCC;
+    border:2px solid #DEE7EC;
     font-weight:bold;
     font-size:12px;
     width:95%;
@@ -80,7 +89,7 @@ input[type="text"], input[type='password']{
 }
 
 textarea{
-    border:2px solid #CCCCCC;
+    border:2px solid #DEE7EC;
     font-weight:bold;
     font-size:12px;
     width:95%;
@@ -92,8 +101,8 @@ textarea{
     margin-top:1em;
     width: 35%;
     padding:5px;
-    background:#E4E4E4;
-    border: 2px solid #CCCCCC;
+    background:#F4F8FA;
+    border: 2px solid #DEE7EC;
 }
 
 
@@ -155,7 +164,9 @@ textarea{
     width:65%;
     float:left;  
     padding:20px;
-    background:#CCCCCC;
+    /*background:#CCCCCC;*/
+    background:#F4F8FA;
+    border:1px solid #DEE7EC;
 
 }
 
@@ -173,14 +184,15 @@ textarea{
     margin-top:1em;
     width: 83%;
     padding:5px;
-    background:#E4E4E4;
-    border: 2px solid #CCCCCC;
+    background:#F4F8FA;
+    border: 2px solid #DEE7EC;
 }
 
 .profile{
     padding:15px;
-    background:none repeat scroll 0 0 #CCCCCC
-
+    background:none repeat scroll 0 0 #F4F8FA;
+    border: 1px solid #DEE7EC;
+    color:#444444;
 }
 
 .gravatar{
@@ -211,7 +223,7 @@ textarea{
 
 .question{
     width:95%;
-    background:#999;
+    background:#F4F8FA;
     padding:10px;
 }
 
@@ -243,15 +255,18 @@ textarea{
 
 .question-description{
     margin-top:1em;
+    margin-left:1em;
+    padding:5px;
 }
 
 .italics{
     font-style: italic;
 }
 
-.light{
-    color:#E4E4E4;
-    font-size:14px;
+.light {
+    color:#444;
+    font-size:12px;
+    font-weight:normal;
 }
 
 .edit-links ul{
@@ -277,7 +292,8 @@ textarea{
 
 .question{
     width:95%;
-    background:#999;
+    background:#F4F8FA;
+    border:1px solid #DEE7EC;
     padding:10px;
 }
 
@@ -304,7 +320,7 @@ textarea{
 .smaller{
     margin-top:4px;
     padding-top:4px;
-    font-size:14px;
+    font-size:13px;
 }
 
 .question-description{
@@ -315,10 +331,7 @@ textarea{
     font-style: italic;
 }
 
-.light{
-    color:#E4E4E4;
-    font-size:14px;
-}
+
 
 .edit-links ul{
     float:left;
@@ -377,7 +390,7 @@ textarea{
 
 .each-answer{
     width:95%;
-    background:#E4E4E4;
+    background:#DEE7EC;
     padding:10px;
     margin-top:1em;
 }
@@ -403,30 +416,30 @@ textarea{
 .primary-navigation .primary-navigation-links a{
     padding-right:5px;
     text-decoration:none;
-    color:maroon;
+    color:#369;
 }
 
 .primary-navigation .primary-navigation-links a:hover{
     text-decoration: underline;
-    color:maroon;
+    color:#369;
     margin-left:0px;
 
 }
 
 .primary-navigation .primary-navigation-links-right a{
     text-decoration:none;
-    color:maroon;
+    color:#369;
 }
 
 .primary-navigation .primary-navigation-links-right a:hover{
     text-decoration:underline;
-    color:maroon;
+    color:#369;
 }
 
 .each-questions{
     margin-top:1em;
-    padding: 5px;
-    background:#E4E4E4;
+    padding: 10px;
+    background:#DEE7EC;
 }
 
 .question-title{
@@ -457,12 +470,10 @@ textarea{
 
 .pagination a{
     padding:3px;
-    text-decoration: none;
-    color:maroon;
+    text-decoration: none;    
     border: 1px solid;
 }
 
 .pagination{
-    
     font-style: none;
 }

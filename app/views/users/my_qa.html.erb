@@ -1,6 +1,7 @@
+<% content_for :title do %>My Questions<% end %>
 
 <div class="my-questions">
-  <h3> My Questions</h3>
+  <h3> My Questions </h3>
   <div class="questions-pagination">
     <%= will_paginate @my_questions, {:next_label => "Next_", :previous_label => "_Previous"} %>
   </div>

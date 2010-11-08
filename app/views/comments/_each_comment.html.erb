@@ -1,0 +1,24 @@
+<div class="each-comment">
+  <div class="comment-content">
+    <%= comment.content %> <br/>
+    <span class="comment-author italics"> Posted by: <%= comment.user.name %>, <%= comment.created_at.to_datetime.strftime("%b %d %Y, %H:%M") %>  </span>
+  </div>
+</div>
+
+
+<style>
+  .each-comment{
+    background: #EEE;
+    display:inline-block;
+    width:100%;
+    font-size:12px;
+    border: 1px solid #DEE7EC;
+    padding:10px;
+    margin-top:1em;
+  }
+
+  .comment-author{    
+    float:right;
+    color:#999;
+  }
+</style>

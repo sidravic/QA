@@ -1,0 +1,20 @@
+<div class="comment-form <%= "#{type_obj.class.to_s}_#{type_obj.id}_form" %>">
+  <%= form_for obj, :as => :comment, :url => question_comments_url(type_obj) do |f| %>
+    <div class="field">
+      <div class="element-label"> Comment </div>
+      <div class="element-field"> <%= f.text_area :content %>  </div>
+      <small class="error_message"> <%= error_messages(obj, :content) %> </small>
+    </div>
+
+    <div class="field">      
+      <div class="element-field"> <%= f.submit "Save Comment", :class => "qa-button" %></div>      
+    </div>
+
+  <% end %>
+</div>
+
+<style>
+  .comment-form textarea{
+    height:70px;
+}
+</style>

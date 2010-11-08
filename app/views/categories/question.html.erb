@@ -1,5 +1,8 @@
+<% content_for :title do  %><%= "Questions for #{@category.title}" %><% end %>
 <div class="my-questions">
-  <h3> Questions for <%= "##{@category.title}" %> </h3>
+  <h3> Questions for <%= link_to "##{@category.title}", question_category_url(@category) %> 
+    <span style="float:right;"> <%= link_to "All Categories", categories_url %> </span>
+</h3>
   <div class="questions-pagination">
     <%= will_paginate @questions, {:next_label => "Next_", :previous_label => "_Previous"} %>
   </div>

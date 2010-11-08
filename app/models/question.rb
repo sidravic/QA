@@ -9,6 +9,7 @@ class Question < ActiveRecord::Base
   has_many :answers, :dependent => :destroy
   has_many :categorizations, :dependent => :destroy
   has_many :categories, :through => :categorizations
+  has_many :comments, :as => :commentable
 
   default_scope order('created_at DESC')
   scope :simple_questions, where(["questions.type = 'SimpleQuestion'"])
