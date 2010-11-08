@@ -75,12 +75,20 @@ describe QuestionsController do
         :type => "simple"
       }
       
-      @question = Question.create!(@valid_question_attributes)      
+      valid_category_attributes =  {:title => "SometTitle" } 
+      @question = Question.new(@valid_question_attributes)
+      @question.categories << Category.create(valid_category_attributes)
+      @question.save!
       controller.stub!(:current_user).and_return(@user) 
     end
 
     it "should update the posted question" do
-      put :update, :user_id => @user.id, :id => @question.id,  :question => @valid_question_attributes.merge({:title => "Should I learn Python",:description => "Should I learn Python Should I learn Python"})
+      put(:update,
+          :user_id => @user.id,
+          :id => @question.id,
+          :question => @valid_question_attributes.merge({:title => "Should I learn Python",:description => "Should I learn Python Should I learn Python"}),
+          :category => {:title => "BusinessAccounting"}
+        )
       @question.reload
       @question.title.should eql("Should I learn Python")
       @question.description.should eql("Should I learn Python Should I learn Python")
@@ -98,7 +106,9 @@ describe QuestionsController do
       }
 
       controller.stub!(:current_user).and_return(@user)
-      @question = Question.create!(@valid_question_attributes)
+      @question = Question.new(@valid_question_attributes)
+      @question.categories << Category.create!(:title => "BusinessAccounting")
+      @question.save 
       @answer = Answer.create!(:content => "The answer is china" )
     end
 

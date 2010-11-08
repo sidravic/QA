@@ -1,0 +1,48 @@
+<% content_for :title do %>Category Listing <% end %>
+
+<h3 class="listing-title"> Category Listings </h3>
+<table class="categories-table" cellpadding="5" cellspacing ="32">
+  <tr>
+    <% 0.step(@categories.size, 5) do |index| %>
+      <% if ( index < @categories.size - 1) %>
+        <td>
+          <%= link_to "##{@categories[index].title}(#{@categories[index].questions.size})", question_category_url(@categories[index])  %>
+        </td>
+      <% end %>
+
+      <% if ( (index + 1) < @categories.size - 1) %>
+        <td>
+          <%= link_to "##{@categories[index + 1].title}(#{@categories[index + 1].questions.size})", question_category_url(@categories[index + 1])  %>
+        </td>
+      <% end %>
+      <% if ( (index + 2) < @categories.size - 1) %>
+        <td>
+          <%= link_to "##{@categories[index + 2].title}(#{@categories[index + 2].questions.size})", question_category_url(@categories[index + 2])  %>
+        </td>
+      <% end %>
+      <% if ( (index + 3) < @categories.size - 1) %>
+        <td>
+          <%= link_to "##{@categories[index + 3].title}(#{@categories[index + 3].questions.size})", question_category_url(@categories[index + 3])  %>
+        </td>
+      <% end %>
+      <% if ( (index + 4) < @categories.size - 1) %>
+        <td>
+          <%= link_to "##{@categories[index + 4].title}(#{@categories[index + 4].questions.size})", question_category_url(@categories[index + 4])  %>
+        </td>
+      <% end %>
+
+    </tr>
+    <% index += 5  %>
+  <% end %>
+</table>
+
+<style>
+  .categories-table{
+    padding:5px;
+}
+
+.listing-title{
+  text-align: center;
+}
+
+</style>

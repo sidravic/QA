@@ -459,4 +459,10 @@ textarea{
     padding:3px;
     text-decoration: none;
     color:maroon;
+    border: 1px solid;
+}
+
+.pagination{
+    
+    font-style: none;
 }

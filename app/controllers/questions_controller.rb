@@ -6,7 +6,7 @@ class QuestionsController < ApplicationController
 
   def create      
     @question = (params[:question][:type].downcase == 'challenge') ? ChallengeQuestion.new(params[:question]) : SimpleQuestion.new(params[:question])
-    @category = Category.new(params[:category]) # Just a stub does nothing
+    @category = Category.new(params[:category])       # Just a stub does nothing
     @question.categorize(params[:category])
     @question.user = current_user    
     if @question.save
@@ -30,7 +30,7 @@ class QuestionsController < ApplicationController
 
   def update    
     @question = Question.find(params[:id])
-    @category = Category.new(params[:category]) # Just a stub does nothing
+    @category = Category.new(params[:category])     # Just a stub does nothing
     @question.categorize(params[:category])
     if @question.update_attributes(params[:question])
       flash[:notice] = "Your question has been successfully updated"

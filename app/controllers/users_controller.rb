@@ -40,8 +40,8 @@ class UsersController < ApplicationController
   end
 
   def my_qa    
-    @my_questions =  current_user.questions.paginate(:page => params[:page], :per_page => 10)
-    @my_answers = current_user.answers.paginate(:page => params[:page], :per_page => 10)
+    @my_questions = current_user.questions.paginate(:page => params[:page], :per_page => 10)
+    @my_answers = current_user.answers.includes(:question).paginate(:page => params[:page], :per_page => 10)
   end
 
   def delete

@@ -1,5 +1,12 @@
 Qa::Application.routes.draw do
   
+ resources :categories, :only => [:index] do
+   member do
+     get 'question'
+   end
+ end
+   
+
   #UserSession Routes
   resource :user_session, :only => [:new, :create, :destroy]
 

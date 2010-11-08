@@ -46,7 +46,11 @@ class Question < ActiveRecord::Base
 
   def remove_deselected_category(category)
     to_be_removed = deselected_categories(category)
-    to_be_removed.each{|_category|  self.categories.delete(_category) }    
+    to_be_removed.each{|_category|  remove_category(_category) }
+  end
+
+  def remove_category(_category)
+    self.categories.delete(_category)
   end
 
 private

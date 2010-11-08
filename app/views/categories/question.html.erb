@@ -1,0 +1,18 @@
+<div class="my-questions">
+  <h3> Questions for <%= "##{@category.title}" %> </h3>
+  <div class="questions-pagination">
+    <%= will_paginate @questions, {:next_label => "Next_", :previous_label => "_Previous"} %>
+  </div>
+
+  <% unless @questions.empty? %>
+    <% @questions.each do | question | %>
+      <%= render :partial => "questions/each_question", :locals => {:question => question} %>
+    <% end %>
+  <% else %>
+    No posted questions to display on this page. <%= link_to "Post one now", new_user_question_url(current_user) %>
+  <% end %>
+
+  <div class="questions-pagination">
+    <%= will_paginate @questions, {:next_label => "Next_", :previous_label => "_Previous"} %>
+  </div>
+</div>
