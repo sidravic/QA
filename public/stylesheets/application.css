@@ -15,7 +15,7 @@ a:hover{
 
 .header {
     padding-top:20px;
-    background-color: #333333;
+    background-color: #336699;
     height: 4em;
     width: 100%;
 }
@@ -30,7 +30,7 @@ a:hover{
 }
 
 .footer {
-    background : #333333;
+    background : #336699;
     color: #CCCCCC;
     height: 4em;
     width: 100%;
@@ -476,4 +476,56 @@ textarea{
 
 .pagination{
     font-style: none;
+}
+
+
+  .category-list{
+    margin-top:1em;
+    font-size: 12px;
+}
+
+.category-list a{
+  text-decoration: none;
+  color:maroon;
+}
+
+  .each-comment{
+    background: #EEE;
+    display:inline-block;
+    width:100%;
+    font-size:12px;
+    border: 1px solid #DEE7EC;
+    padding:10px;
+    margin-top:1em;
+  }
+
+  .comment-author{
+    float:right;
+    color:#999;
+  }
+
+  .comment-edit-links ul{
+
+    padding:0px;
+  }
+  .comment-edit-links ul li {
+    list-style-type: none;
+    display:inline;
+    padding: 3px;
+  }
+
+  .comment-edit-links ul li a{
+    color:maroon;
+    text-decoration: none;
+
+  }
+
+  .comment-edit-links ul li a:hover{
+    color:maroon;
+    text-decoration: underline;
+
+  }
+
+  #comment_content{
+    height:70px;
 }

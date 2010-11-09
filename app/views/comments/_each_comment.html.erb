@@ -1,7 +1,24 @@
+<% associated_question = find_question(comment) %>
+
 <div class="each-comment">
   <div class="comment-content">
     <%= comment.content %> <br/>
-    <span class="comment-author italics"> Posted by: <%= comment.user.name %>, <%= comment.created_at.to_datetime.strftime("%b %d %Y, %H:%M") %>  </span>
+    <% if current_user == comment.user %>
+      <span class="comment-edit-links" style="display:inline">
+        <ul>
+          <li><%= link_to "Edit", "#", :class=>"edit_#{comment.id} edit_comment_link" %> </li> |
+          <li><%= link_to "Delete", "#" %> </li>
+        </ul>
+      </span>
+    <% end %>
+    <div class="comment-edit-form">
+      
+      <%= render :partial => "shared/edit_comment_form", :locals => {:obj =>comment,
+          :type_obj => associated_question,
+          :form_method => :put,
+          :action => question_comment_url(associated_question, comment) } %>
+    </div>
+    <span class="comment-author italics"> Posted by: <%= comment.user.name %>, <%= comment.created_at.to_datetime.strftime("%b %d %Y, %H:%M") %>  </span>        
   </div>
 </div>
 
@@ -20,5 +37,32 @@
   .comment-author{    
     float:right;
     color:#999;
+  }  
+
+  .comment-edit-links ul{
+
+    padding:0px;
   }
+  .comment-edit-links ul li {
+    list-style-type: none;
+    display:inline;
+    padding: 3px;
+  }
+
+  .comment-edit-links ul li a{
+    color:maroon;
+    text-decoration: none;
+
+  }
+
+  .comment-edit-links ul li a:hover{
+    color:maroon;
+    text-decoration: underline;
+
+  }
+
+  #comment_content{
+    height:70px;
+}
 </style>
+

@@ -26,16 +26,19 @@
         </div>
       <% end %>
 
+      <div class="question-comment-form">
+        <%= render :partial => "shared/comment_form", :locals => {:obj => Comment.new,
+          :type_obj => question,
+          :form_method => :post, :action => question_comments_url(question) } %>
+      </div>
+
+      
       <div class="question-comments">
         <% question.comments.each do |comment| %>
           <%= render :partial => "comments/each_comment", :locals => {:comment => comment} %>
         <% end %>
-      </div>
-
-
-      <div class="question-comment-form">
-        <%= render :partial => "shared/comment_form", :locals => {:obj => question.comments.build, :type_obj => question } %>
-      </div>
+      </div>      
+      
     </div>
   </div>
 </div>
@@ -51,13 +54,3 @@
   }
 </style>
 
-<script>
-  $(document).ready(function(){
-    $('.question-comment-link').click(function(){
-      var klasses = $(this).attr('class');
-      var comment_box_klass = klasses.split(" ")[0];
-      $("." + comment_box_klass + "_form").slideToggle("slow");
-      return false;      
-    });
-  })
-</script>

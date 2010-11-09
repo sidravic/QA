@@ -1,4 +1,4 @@
-<div class="each-answer round">
+<div class="each-answer">
       <div class="answer-author">
         <%= gravatar_for(answer.user)%>
       </div>
@@ -16,7 +16,8 @@
             <div class="edit-links">
               <ul>
                 <li> <%= link_to "Edit", edit_question_answer_url(question, answer) %> |</li>
-                <li> <%= link_to "Delete", question_answer_url(question, answer), :method => :delete, :confirm => "Are you sure you want to delete this answer?" %> </li>
+                <li> <%= link_to "Delete", question_answer_url(question, answer), :method => :delete, :confirm => "Are you sure you want to delete this answer?" %> | </li>
+                <li> <%= link_to "Add Comment", "", :class => "answers-add-comment-#{answer.id} aanswers-add-comment-link" %> </li>
               </ul>
             </div>
           <% end  %>

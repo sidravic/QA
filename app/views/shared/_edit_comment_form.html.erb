@@ -1,5 +1,5 @@
 <!-- question_comments_url(type_obj) -->
-<div class="comment-form <%= "#{type_obj.class.to_s}_#{type_obj.id}_form" %>">
+<div class="edit-comment-form  hidden <%= "edit_#{obj.id}_form" %>">
   <%= form_for obj, :as => :comment, :url => action, :method => form_method do |f| %>
     <div class="field">
       <div class="element-label"> Comment </div>
@@ -23,5 +23,9 @@
 <style>
   .comment-form textarea{
     height:70px;
+}
+
+.hidden{
+  display:none;
 }
 </style>
