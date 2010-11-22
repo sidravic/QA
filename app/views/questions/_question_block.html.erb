@@ -15,7 +15,7 @@
     </div>
 
     <div class="question-description">
-      <%= question.description %>
+      <%= sanitize convert_to_html(question.description) %>
       <% if current_user == question.user %>
         <div class="edit-links">
           <ul>

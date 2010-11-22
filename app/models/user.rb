@@ -10,6 +10,9 @@ class User < ActiveRecord::Base
     self.profile.update_attributes(params)    
   end
 
+  def to_token
+    @user.perishable_token.to_s
+  end
   
   
 end

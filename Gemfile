@@ -15,7 +15,7 @@ gem 'gravatar_image_tag', '0.1.0'
 gem "authlogic"
 gem "rails3-generators"
 gem 'will_paginate', '3.0.pre2'
-
+gem 'rdiscount'
 
 group :development do
   gem 'rspec-rails', '2.0.1'

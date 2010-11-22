@@ -9,6 +9,10 @@ module QuestionCreator
     question
   end
 
+  def create_answer(attributes = {})
+    question = (attributes.empty?) ? Factory.build(:answer) : Factory.build(:answer, attributes)
+  end
+
   def valid_user_attributes
     {:email => "sid2.ravichandran@gmail.com",
       :name => "Siddhart2h Ravichandran",
@@ -79,6 +83,34 @@ describe CommentsController do
     it "should not update the comment if its empty" do
       put :update, :id => @comment.id, :question_id => @question.id, :comment => {:content => ""}
       response.should redirect_to question_url(@question.id)
+    end
+  end
+
+  describe "/GET 'create'" do
+    before(:each) do
+        @user = User.create(valid_user_attributes)
+        @answer = create_answer
+        @question = create_question
+        @question.answers << @answer
+        @question.save(:validate => false)
+        @comment = Comment.create(valid_comment_attributes)
+      end
+      
+    describe "For SUCCESSFUL answer comment creation" do      
+      it "should add comment to an answer if valid" do
+        count = @answer.comments.size
+        post :create, :question_id => @question.id, :answer_id => @answer.id, :comment => valid_comment_attributes.merge(:content => "")
+        @answer.comments.size.should eql(count)
+      end
+    end
+
+    describe "For UNSUCCESSFUL answer comment creation" do
+      it "should NOT add comment to an answer if valid" do
+        count = @answer.comments.size
+        post :create, :question_id => @question.id, :answer_id => @answer.id, :comment => valid_comment_attributes
+        @answer.comments.size.should eql(count)
+      end
+
     end
   end
 end

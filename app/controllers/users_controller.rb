@@ -8,8 +8,9 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(params[:user])
+    @user = User.new(params[:user])   
     if @user.save
+      UserMailer.activation(@user).deliver
       flash[:notice] = "Your account has been successfully created"
       redirect_to user_url(@user)
     else
@@ -45,6 +46,19 @@ class UsersController < ApplicationController
   end
 
   def delete
+  end
+
+  def activate
+    @user = User.find_by_perishable_token(params[:token])
+    if @user
+      @user.reset_perishable_token!
+      @user.save(:validate => false)
+      flash[:notice] = "Awesome! Your account has been activated. Please log in with your email and password"
+      redirect_to root_url
+    else
+      flash[:notice] = "Your token seems to be invalid. Please request for a new token"
+      redirect_to root_url
+    end
   end
 
 end

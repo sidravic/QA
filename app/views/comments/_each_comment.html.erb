@@ -1,4 +1,5 @@
-<% associated_question = find_question(comment) %>
+<%# associated_question = find_question(comment) %>
+<% associated_object =  find_associated_object(comment) %>
 
 <div class="each-comment">
   <div class="comment-content">
@@ -12,8 +13,12 @@
       </span>
     <% end %>
     <div class="comment-edit-form">
-      
       <%= render :partial => "shared/edit_comment_form", :locals => {:obj =>comment,
+          :type_obj => associated_object,
+          :form_method => :put,
+          :action => get_update_action(comment) } %>
+
+      <%#= render :partial => "shared/edit_comment_form", :locals => {:obj =>comment,
           :type_obj => associated_question,
           :form_method => :put,
           :action => question_comment_url(associated_question, comment) } %>

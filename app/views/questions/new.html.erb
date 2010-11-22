@@ -33,8 +33,20 @@
       <small class="error-message"><%= error_messages(@question,:description ) %></small>
     </div>
 
+  <div class="wmd-preview"></div>
+
     <div class="field">
       <div> <%= f.submit "Register", :class => 'qa-buttons' %> </div>
     </div>
   <% end %>
 </div>
+
+<script type="text/javascript" src="/javascripts/wmd/wmd.js"></script>
+
+
+<style>
+  .wmd-preview{
+    background:#F4F8FF
+    
+}
+</style>

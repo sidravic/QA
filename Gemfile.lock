@@ -78,6 +78,7 @@ GEM
       rake (>= 0.8.4)
       thor (~> 0.14.0)
     rake (0.8.7)
+    rdiscount (1.6.5)
     rspec (2.0.1)
       rspec-core (~> 2.0.1)
       rspec-expectations (~> 2.0.1)
@@ -114,6 +115,7 @@ DEPENDENCIES
   mysql2
   rails (= 3.0.1)
   rails3-generators
+  rdiscount
   rspec (= 2.0.1)
   rspec-rails (= 2.0.1)
   webrat (= 0.7.1)

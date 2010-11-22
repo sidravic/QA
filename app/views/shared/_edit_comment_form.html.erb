@@ -3,7 +3,7 @@
   <%= form_for obj, :as => :comment, :url => action, :method => form_method do |f| %>
     <div class="field">
       <div class="element-label"> Comment </div>
-      <div class="element-field"> <%= f.text_area :content %>  </div>
+      <div class="element-field wmd-ignore"> <%= f.text_area :content %>  </div>
       <small class="error_message"> <%= error_messages(obj, :content) %> </small>
     </div>
 

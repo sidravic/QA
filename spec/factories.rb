@@ -11,8 +11,7 @@ Factory.define :profile do |profile|
 end
 
 Factory.define :answer do |answer|
-  answer.content "This is the house that jack built"
-  answer.association :question
+  answer.content "This is the house that jack built"  
 end
 
 Factory.define :question do |question|

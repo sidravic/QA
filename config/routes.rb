@@ -20,6 +20,8 @@ Qa::Application.routes.draw do
     end
   end
 
+  match "/activate/:token", :to => "users#activate", :as => "activate"
+
   resources :questions do
     resources :answers, :except => [:show, :new] do
       resources :comments, :except => [:show, :new, :edit, :index]
@@ -28,7 +30,6 @@ Qa::Application.routes.draw do
   end
 
   match "/register", :to => "users#new", :as => "register"
-
   #Pages Routes
   match "pages/about", :to => "pages#about", :as => "about"
   match "pages/contact_us", :to => "pages#contact_us", :as => "contact_us"

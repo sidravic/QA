@@ -21,5 +21,23 @@
 
 
 
-
+<!--<script>
+  $(document).ready(function(){
+    $(".answers-add-comment-link").click(function(){
+     
+      var klasses = $(this).attr('class');
+      var klass = klasses.split(" ")[0];
+      var final_klass = "." + klass + "_form";
+      alert(final_klass);
+      $("." + klass + "_form").slideToggle('slow');
+      return false;
+});
+  })
+</script> -->
+<style>
+  .answer-comment{
+    margin-top:3em;
+    
+}
+</style>
 

@@ -17,11 +17,24 @@
               <ul>
                 <li> <%= link_to "Edit", edit_question_answer_url(question, answer) %> |</li>
                 <li> <%= link_to "Delete", question_answer_url(question, answer), :method => :delete, :confirm => "Are you sure you want to delete this answer?" %> | </li>
-                <li> <%= link_to "Add Comment", "", :class => "answers-add-comment-#{answer.id} aanswers-add-comment-link" %> </li>
+                <li> <%= link_to "Add Comment", "", :class => "Answer_#{answer.id} answers-add-comment-link" %> </li>
               </ul>
             </div>
           <% end  %>
+
+          <div class="answer-comments-list">
+            <% answer.comments.each do |comment| %>
+              <%= render :partial => "comments/each_comment", :locals => {:comment => comment } %>
+            <% end %>
+          </div>
+
+          <div class="answer-comment">
+            <%= render :partial => "shared/comment_form", :locals => {:obj => Comment.new,
+              :type_obj => answer, :form_method => :post, :action => question_answer_comments_url(question, answer)} %>
+          </div>
         </div>
 
       </div>
     </div>
+
+

@@ -90,4 +90,16 @@ describe UsersController do
       response.should redirect_to(edit_user_url(@user))     
     end
   end
+
+  describe "GET /activate/:token" do
+    before(:each) do
+      controller.stub!(:current_user).and_return(@user)
+    end
+    it "should activate the users account when provided with a valid token" do      
+      perishable_token = @user.perishable_token
+      get :activate, :token => @user.perishable_token
+      @user.perishable_token.should_not eql(perishable_token)
+      @user.perishable_token.should_not be_nil
+    end
+  end
 end

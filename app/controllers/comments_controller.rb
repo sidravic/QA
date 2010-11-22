@@ -44,9 +44,9 @@ class CommentsController < ApplicationController
   end
 
   def find_associated_object(params)
-    if params[:question_id]
+    if params[:question_id] && !params[:answer_id]
       return Question.find(params[:question_id])
-    else
+    elsif params[:question_id] && params[:answer_id]
       return Answer.find(params[:answer_id])
     end    
   end
