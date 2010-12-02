@@ -4,10 +4,13 @@
 
     <%= render :partial => "answers/answer_form_fields", :locals => {:f => f, :answer => @answer}  %>
 
+    <div class="wmd-preview"></div>
     <div class="field">
       <div> <%= f.submit "Save", :class => 'qa-buttons' %> </div>
     </div>
   <% end %>
+
+
 </div>
 
 <script type="text/javascript" src="/javascripts/wmd/wmd.js"></script>
@@ -20,4 +23,11 @@
     margin-top: 1em;
 
   }
+
+  .wmd-preview{
+    padding:11px;
+    background: #CCCCCC;
+    margin-left:10px;
+    width:94%;
+}
 </style>

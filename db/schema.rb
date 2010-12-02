@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101115122527) do
+ActiveRecord::Schema.define(:version => 20101126121733) do
 
   create_table "answers", :force => true do |t|
     t.integer  "user_id"
@@ -29,6 +29,13 @@ ActiveRecord::Schema.define(:version => 20101115122527) do
   create_table "categorizations", :force => true do |t|
     t.integer  "question_id"
     t.integer  "category_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "chosen_answers", :force => true do |t|
+    t.integer  "question_id"
+    t.integer  "answer_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -84,7 +91,7 @@ ActiveRecord::Schema.define(:version => 20101115122527) do
     t.string   "current_login_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.datetime "activated_at"
+    t.boolean  "active",             :default => false, :null => false
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

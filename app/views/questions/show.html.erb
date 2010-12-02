@@ -27,8 +27,7 @@
      
       var klasses = $(this).attr('class');
       var klass = klasses.split(" ")[0];
-      var final_klass = "." + klass + "_form";
-      alert(final_klass);
+      var final_klass = "." + klass + "_form";     
       $("." + klass + "_form").slideToggle('slow');
       return false;
 });

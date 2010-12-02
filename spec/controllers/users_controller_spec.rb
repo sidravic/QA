@@ -93,13 +93,15 @@ describe UsersController do
 
   describe "GET /activate/:token" do
     before(:each) do
+      @user = Factory(:user)
       controller.stub!(:current_user).and_return(@user)
     end
     it "should activate the users account when provided with a valid token" do      
       perishable_token = @user.perishable_token
       get :activate, :token => @user.perishable_token
+      @user.reload
       @user.perishable_token.should_not eql(perishable_token)
-      @user.perishable_token.should_not be_nil
+      @user.perishable_token.should_not be_nil      
     end
   end
 end

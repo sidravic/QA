@@ -386,6 +386,7 @@ textarea{
 .answer-description{
     margin-top:1em;
     font-weight:normal;
+    font-size:13px;
 }
 
 .each-answer{
@@ -479,17 +480,17 @@ textarea{
 }
 
 
-  .category-list{
+.category-list{
     margin-top:1em;
     font-size: 12px;
 }
 
 .category-list a{
-  text-decoration: none;
-  color:maroon;
+    text-decoration: none;
+    color:maroon;
 }
 
-  .each-comment{
+.each-comment{
     background: #EEE;
     display:inline-block;
     width:100%;
@@ -497,35 +498,42 @@ textarea{
     border: 1px solid #DEE7EC;
     padding:10px;
     margin-top:1em;
-  }
+}
 
-  .comment-author{
+.comment-author{
     float:right;
     color:#999;
-  }
+}
 
-  .comment-edit-links ul{
+.comment-edit-links ul{
 
     padding:0px;
-  }
-  .comment-edit-links ul li {
+}
+.comment-edit-links ul li {
     list-style-type: none;
     display:inline;
     padding: 3px;
-  }
+}
 
-  .comment-edit-links ul li a{
+.comment-edit-links ul li a{
     color:maroon;
     text-decoration: none;
 
-  }
+}
 
-  .comment-edit-links ul li a:hover{
+.comment-edit-links ul li a:hover{
     color:maroon;
     text-decoration: underline;
 
-  }
+}
 
-  #comment_content{
+#comment_content{
     height:70px;
+}
+
+.wmd-preview{
+    background:none repeat scroll 0 0 #CCCCCC;
+    margin-left:10px;
+    padding:11px;
+    width:94%;
 }

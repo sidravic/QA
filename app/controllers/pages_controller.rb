@@ -10,4 +10,7 @@ class PagesController < ApplicationController
   def landing    
   end
 
+  def message
+  end
+
 end

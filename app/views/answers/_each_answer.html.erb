@@ -5,13 +5,18 @@
 
       <div class="answer-details">
         <div class="smaller"> <%= answer.user.name %> </div>
+        <div class="answered">
+          <% if answer.question.answer ==  answer %>
+            <%= image_tag('/images/answered.gif') %>
+          <% end %>
+        </div>
         <span class="italics dark">
           <%= answer.created_at.to_datetime.strftime("%b %M %Y, %H:%M") %>
         </span>
 
 
         <div class="answer-description">
-          <%= answer.content %>
+          <%= sanitize convert_to_html(answer.content) %>
           <% if current_user == answer.user %>
             <div class="edit-links">
               <ul>
@@ -38,3 +43,8 @@
     </div>
 
 
+<style>
+  .answered{
+    float:right;
+}
+</style>

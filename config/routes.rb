@@ -33,6 +33,7 @@ Qa::Application.routes.draw do
   #Pages Routes
   match "pages/about", :to => "pages#about", :as => "about"
   match "pages/contact_us", :to => "pages#contact_us", :as => "contact_us"
+  match "pages/message", :to => "pages#message", :as => "message"
   root :to => "pages#landing"
 
   # The priority is based upon order of creation:

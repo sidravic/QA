@@ -11,8 +11,10 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])   
     if @user.save
       UserMailer.activation(@user).deliver
-      flash[:notice] = "Your account has been successfully created"
-      redirect_to user_url(@user)
+      unless @user.active?
+        flash[:message] = "Your account has been successfully created. An email has been sent to your account. Please click the link to activate your account"
+        redirect_to message_url
+      end
     else
       flash.now[:error] = "Please fix the errors"
       render "new"
@@ -51,6 +53,7 @@ class UsersController < ApplicationController
   def activate
     @user = User.find_by_perishable_token(params[:token])
     if @user
+      @user.activate!
       @user.reset_perishable_token!
       @user.save(:validate => false)
       flash[:notice] = "Awesome! Your account has been activated. Please log in with your email and password"

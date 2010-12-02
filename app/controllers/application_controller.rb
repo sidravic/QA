@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user_session
   helper_method :current_user
   helper_method :convert_to_html
-
+  helper_method :get_categories
   include Constants
   
   def current_user_session
@@ -21,5 +21,5 @@ class ApplicationController < ActionController::Base
 
   def convert_to_html(text)
     RDiscount.new(text).to_html
-  end
+  end  
 end
