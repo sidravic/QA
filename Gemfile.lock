@@ -36,6 +36,8 @@ GEM
       activesupport
     builder (2.1.2)
     cgi_multipart_eof_fix (2.5.0)
+    ci_reporter (1.6.4)
+      builder (>= 2.1.2)
     daemons (1.0.10)
     diff-lcs (1.1.2)
     erubis (2.6.6)
@@ -128,6 +130,7 @@ DEPENDENCIES
   annotate-models (= 1.0.4)
   authlogic
   cgi_multipart_eof_fix
+  ci_reporter
   factory_girl_rails (= 1.0)
   fastthread
   gravatar_image_tag (= 0.1.0)

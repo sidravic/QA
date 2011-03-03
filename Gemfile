@@ -18,6 +18,7 @@ gem 'will_paginate', '3.0.pre2'
 gem 'rdiscount'
 gem 'oauth'
 gem 'twitter'
+gem 'ci_reporter'
 
 group :development do
   gem 'rspec-rails', '2.0.1'
