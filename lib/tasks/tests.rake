@@ -18,7 +18,7 @@ namespace :t do
   end
   
   desc "Runs RSpec Tests"
-  task :rspec => [:environment, :bundle] do    
+  task :rspec => [:environment] do    
     exec "rspec spec/" do |status, response|
       puts "STATUS #{status} \n RESPONSE #{response}"
     end    
