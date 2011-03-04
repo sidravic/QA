@@ -14,7 +14,7 @@ namespace :t do
   
   desc "Runs Bundle install"
   task :bundle => :environment do
-    sh "bundle install"
+    sh "bundle install RAILS_ENV=development"
   end
   
   desc "Runs RSpec Tests"
