@@ -7,4 +7,17 @@ require 'rubygems'
 require 'ci/reporter/rake/rspec'
 require 'metric_fu'
 
+MetricFu::Configuration.run do |config|
+   config.rcov[:test_files] = ['spec/**/*_spec.rb']  
+   config.rcov[:rcov_opts] << "-Ispec" # Needed to find spec_helper
+   config.reek = { :dirs_to_reek => ['app', 'lib'] }
+   config.flay ={:dirs_to_flay => ['app', 'lib'],
+                  :minimum_score => 100,
+                  :filetypes => ['rb'] 
+                 }
+   
+end
+
+
+
 Qa::Application.load_tasks
