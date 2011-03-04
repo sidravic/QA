@@ -20,6 +20,7 @@ namespace :t do
   
   desc "Runs RSpec Tests"
   task :rspec => [:environment, :bundle] do
+    sh "env PATH=$PATH"
     sh "rspec spec/" do |status, response|
       puts "STATUS #{status} \n RESPONSE #{response}"
     end    
