@@ -19,6 +19,8 @@ gem 'rdiscount'
 gem 'oauth'
 gem 'twitter'
 gem 'ci_reporter'
+gem 'rails_best_practices'
+gem 'metric_fu'
 
 group :development do
   gem 'rspec-rails', '2.0.1'
