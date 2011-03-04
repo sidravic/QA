@@ -5,5 +5,6 @@ require File.expand_path('../config/application', __FILE__)
 require 'rake'
 require 'rubygems'
 require 'ci/reporter/rake/rspec'
+require 'metric_fu'
 
 Qa::Application.load_tasks
