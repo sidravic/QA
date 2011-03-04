@@ -26,7 +26,7 @@ namespace :t do
   
   desc "Runs the best practices gem to prescribe necessary changes"
   task :best_practices => [:environment, :bundle] do
-    sh "rails_best_practices -f html ."
+    exec "rails_best_practices -f html ."
   end
   
   
