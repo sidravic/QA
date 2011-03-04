@@ -1,3 +1,4 @@
+=begin
 require 'spec_helper'
 
 describe Question do
@@ -47,3 +48,4 @@ describe Question do
   end
 
 end
+=end

@@ -1,5 +1,5 @@
 require 'spec_helper'
-
+=begin
 describe AnswersController do
 
 
@@ -109,3 +109,5 @@ describe AnswersController do
   end
 
 end
+
+=end

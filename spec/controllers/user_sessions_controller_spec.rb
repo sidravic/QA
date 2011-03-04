@@ -1,3 +1,4 @@
+=begin
 require 'spec_helper'
 
 describe UserSessionsController do
@@ -55,3 +56,4 @@ describe UserSessionsController do
   end
 
 end
+=end

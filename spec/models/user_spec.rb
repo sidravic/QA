@@ -1,3 +1,4 @@
+=begin
 require 'spec_helper'
 
 describe User do
@@ -14,3 +15,4 @@ describe User do
     @user.should have(1).errors_on(:name)
  end
 end
+=end
