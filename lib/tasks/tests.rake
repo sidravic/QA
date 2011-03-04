@@ -31,8 +31,9 @@ namespace :t do
   
   desc "Runs metric fu all"
   task :mfu => :environment do
-    sh "echo $PATH"
-    sh "rake metrics:all"
+    #sh "echo $PATH"
+    #sh "rake metrics:all"
+    Rake::Task["metrics:all"].invoke
   end
   
   
