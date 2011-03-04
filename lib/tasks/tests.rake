@@ -31,7 +31,7 @@ namespace :t do
   
   desc "Runs metric fu all"
   task :mfu => :environment do
-    sh "echo $PATH"
+    sh "export $PATH"    
     sh "rake metrics:all"
   end
   
