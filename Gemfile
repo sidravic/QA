@@ -23,12 +23,12 @@ gem 'rails_best_practices'
 gem 'metric_fu'
 
 group :development do
-  gem 'rspec-rails', '2.0.1'
+   gem "rspec-rails", ">= 2.5.0"
   gem 'annotate-models', '1.0.4'
 end
 
 group :test do
-  gem 'rspec', '2.0.1'
+  gem 'rspec', '2.5.0'
   gem 'webrat', '0.7.1'
   gem 'factory_girl_rails', '1.0'
 end
