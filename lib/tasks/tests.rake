@@ -31,7 +31,7 @@ namespace :t do
   
   desc "Runs metric fu all"
   task :mfu => :environment do
-    sh "export $PATH"    
+    sh "rvm use 1.9.2"
     sh "rake metrics:all"
   end
   
