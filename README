@@ -1,1 +1,1 @@
-QA is a easy to use Rails 3 based answers application, built that leverages the ease of use of email to provide users answers to questions.
+QA is Ruby on Rails application built to simplify getting answers to questions. It uses twitter to maximizes the chances of getting a response quickly.
